@@ -22,3 +22,10 @@ cat <<NVM_HOWTO
   or log out and back into your terminal.
 
 NVM_HOWTO
+#!/bin/bash
+
+dir=$npm_config_root/.npm/$npm_package_name/$npm_package_version/package
+
+# add lines to the bashrc.
+has=$(cat ~/.bashrc | egrep "^# ADDED BY npm FOR NVM$" || true)
+if [ "x$has" != "x" ];
